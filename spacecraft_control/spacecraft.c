@@ -3,10 +3,14 @@
 
 
 int zeilen = 10; // Aktuelle Zeile die Zuweisung ist der Startpunkt
-int posxn = 20; // Aktueller Punkt auf der X Achse
+int posxn = 20; // Aktueller Punkt auf der X Achse und jener Wert der Neu Zugewiesen wird
 int richtung = 2; // Variable zur Anweisung der Flugrichtung
 int schleife = 1; // Variable zum erhalt des Schleifendurchlaufs und zusätzlich zur Fehlerweitergabe
-int posxa = 0; // Startpunkt des Raumschiffs auf der X Achse
+int posxa = 0; // Aktueller Standort
+
+void spielfeld();
+void bewegung();
+void leerzeichen();
 
 
 void bewegung()
@@ -41,8 +45,27 @@ void bewegung()
 			break;
 
 		}
+
+		spielfeld();
 	}
 }
+
+
+void spielfeld() // Funktion welche das Spielfeld in der X Achse begrenzt 
+{
+	if (posxn < 0) // Überprüfung ob der Nutzer zu weit nach links fliegen möchte
+	{
+		posxn++; // Korrektur des Wertes um dieses Verhalten zu verhindern
+	}
+	else
+		if (posxn > 100) // Überprüfung ob der Nutzer zu weit nach rechts fliegen möchte
+		{
+			posxn--; // Korrektur des Wertes um dieses Verhalten zu verhindern
+		}
+
+}
+
+
 
 void leerzeichen(posx) // Funktion zur Ausgabe der Leerzeichen
 {
