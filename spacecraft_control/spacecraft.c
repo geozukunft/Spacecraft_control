@@ -10,7 +10,41 @@ int posxa = 0; // Aktueller Standort
 
 void spielfeld();
 void bewegung();
-void leerzeichen();
+void leerzeichen(posx);
+void yachse(zeilen);
+
+
+
+int main()
+{
+	system("mode con: cols=106 lines=50"); // Festlegung der Fenstergröße
+
+	printf("Steuere das Raumschiff mit den Pfeiltasten und zum Beenden des Programms nutze X\n");
+	do
+	{
+		bewegung(); // Aufruf der Funktion welche die Variablen zur Bewegung festlegt
+
+		system("cls"); // Löschen des Bildschirms um alte Eingaben bzw alte Frames zu entfernen
+
+		if (posxn >= posxa && richtung == 2) // Feststellung der Flugrichtung
+		{
+			nachrechts();
+		}
+		else
+			if (posxn <= posxa && richtung == 1) // Feststellung der Flugrichtung
+			{
+				nachlinks();
+			}
+			else
+				if (schleife == 3) // Bei einem Fehler wird das Programm abgebrochen aktuell noch nicht implementiert
+				{
+					printf("Es gab einen Fehler im System Error Code 1");
+				}
+
+	} while (schleife); // Solange dies zutrifft wird die Schleife ausgeführt wird durch den Druck der x oder X Taste in der Bedienungs Funktion auf 0 gesetzt
+
+	return 0;
+}
 
 
 void bewegung()
@@ -113,36 +147,4 @@ void nachlinks() // Funktion welche das Raumschiff in Flugrichtung nach links au
 	leerzeichen(posxn); printf("     \\\n");
 
 	posxa = posxn; // Gleichstellung der aktuell Ausgegebenen Variablen zur Variable die den aktuellen Standort in der x Achse speichert
-}
-
-
-int main()
-{
-	system("mode con: cols=106 lines=50"); // Festlegung der Fenstergröße
-
-	printf("Steuere das Raumschiff mit den Pfeiltasten und zum Beenden des Programms nutze X\n");
-	do
-	{
-		bewegung(); // Aufruf der Funktion welche die Variablen zur Bewegung festlegt
-
-		system("cls"); // Löschen des Bildschirms um alte Eingaben bzw alte Frames zu entfernen
-
-		if (posxn >= posxa && richtung == 2) // Feststellung der Flugrichtung
-		{
-			nachrechts();
-		}
-		else
-			if (posxn <= posxa && richtung == 1) // Feststellung der Flugrichtung
-			{
-				nachlinks();
-			}
-			else
-				if (schleife == 3) // Bei einem Fehler wird das Programm abgebrochen aktuell noch nicht implementiert
-				{
-					printf("Es gab einen Fehler im System Error Code 1");
-				}
-
-	} while (schleife); // Solange dies zutrifft wird die Schleife ausgeführt wird durch den Druck der x oder X Taste in der Bedienungs Funktion auf 0 gesetzt
-
-	return 0;
 }
