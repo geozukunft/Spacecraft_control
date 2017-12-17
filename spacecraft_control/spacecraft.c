@@ -1,3 +1,15 @@
+/*
+Dieses Programm wurde von Viktor Lennert geschrieben 
+Dieses Werk ist lizenziert unter einer Creative Commons Namensnennung-NichtKommerziell 4.0 International Lizenz.
+http://creativecommons.org/licenses/by-nc/4.0/
+
+Bitte beachten sie das dieses Programm nur für Windows geschrieben und auf ihre vollständige Funktionalität geprüft wurde!
+Jegliche Informationen in diesem Programm beziehen sich auf eine Windows Umgebung.
+
+*/
+
+
+
 #include <stdio.h>
 #include <windows.h>
 
@@ -8,15 +20,18 @@ int richtung = 2; // Variable zur Anweisung der Flugrichtung
 int schleife = 1; // Variable zum erhalt des Schleifendurchlaufs und zusätzlich zur Fehlerweitergabe
 int posxa = 0; // Aktueller Standort
 
-void spielfeld();
+void spielfeld(); // Definition aller Funktionen um den Code übersichtlich zu halten.
 void bewegung();
 void leerzeichen(posx);
 void yachse(zeilen);
+void nachrechts();
+void nachlinks();
 
 
 
 int main()
 {
+	
 	system("mode con: cols=106 lines=50"); // Festlegung der Fenstergröße
 
 	printf("Steuere das Raumschiff mit den Pfeiltasten und zum Beenden des Programms nutze X\n");
@@ -36,7 +51,7 @@ int main()
 				nachlinks();
 			}
 			else
-				if (schleife == 3) // Bei einem Fehler wird das Programm abgebrochen aktuell noch nicht implementiert
+				if (schleife == 3) // Bei einem Fehler wird das Programm abgebrochen aktuell noch nicht implementiert und deshalb Funktionslos
 				{
 					printf("Es gab einen Fehler im System Error Code 1");
 				}
