@@ -1,9 +1,5 @@
 /*
-Dieses Programm wurde von Viktor Lennert geschrieben 
-Dieses Werk ist lizenziert unter einer Creative Commons Namensnennung-NichtKommerziell 4.0 International Lizenz.
-http://creativecommons.org/licenses/by-nc/4.0/
-
-Bitte beachten sie das dieses Programm nur für Windows geschrieben und auf ihre vollständige Funktionalität geprüft wurde!
+Bitte beachten sie das dieses Programm nur fÃ¼r Windows geschrieben und auf ihre vollstÃ¤ndige FunktionalitÃ¤t geprÃ¼ft wurde!
 Jegliche Informationen in diesem Programm beziehen sich auf eine Windows Umgebung.
 
 */
@@ -17,10 +13,10 @@ Jegliche Informationen in diesem Programm beziehen sich auf eine Windows Umgebun
 int zeilen = 10; // Aktuelle Zeile die Zuweisung ist der Startpunkt
 int posxn = 20; // Aktueller Punkt auf der X Achse und jener Wert der Neu Zugewiesen wird
 int richtung = 2; // Variable zur Anweisung der Flugrichtung
-int schleife = 1; // Variable zum erhalt des Schleifendurchlaufs und zusätzlich zur Fehlerweitergabe
+int schleife = 1; // Variable zum erhalt des Schleifendurchlaufs und zusÃ¤tzlich zur Fehlerweitergabe
 int posxa = 0; // Aktueller Standort
 
-void spielfeld(); // Definition aller Funktionen um den Code übersichtlich zu halten.
+void spielfeld(); // Definition aller Funktionen um den Code Ã¼bersichtlich zu halten.
 void bewegung();
 void leerzeichen(posx);
 void yachse(zeilen);
@@ -32,14 +28,14 @@ void nachlinks();
 int main()
 {
 	
-	system("mode con: cols=106 lines=50"); // Festlegung der Fenstergröße
+	system("mode con: cols=106 lines=50"); // Festlegung der FenstergrÃ¶ÃŸe
 
 	printf("Steuere das Raumschiff mit den Pfeiltasten und zum Beenden des Programms nutze X\n");
 	do
 	{
 		bewegung(); // Aufruf der Funktion welche die Variablen zur Bewegung festlegt
 
-		system("cls"); // Löschen des Bildschirms um alte Eingaben bzw alte Frames zu entfernen
+		system("cls"); // LÃ¶schen des Bildschirms um alte Eingaben bzw alte Frames zu entfernen
 
 		if (posxn >= posxa && richtung == 2) // Feststellung der Flugrichtung
 		{
@@ -56,7 +52,7 @@ int main()
 					printf("Es gab einen Fehler im System Error Code 1");
 				}
 
-	} while (schleife); // Solange dies zutrifft wird die Schleife ausgeführt wird durch den Druck der x oder X Taste in der Bedienungs Funktion auf 0 gesetzt
+	} while (schleife); // Solange dies zutrifft wird die Schleife ausgefÃ¼hrt wird durch den Druck der x oder X Taste in der Bedienungs Funktion auf 0 gesetzt
 
 	return 0;
 }
@@ -67,29 +63,29 @@ void bewegung()
 	int ascii = 0; // 0 Setzen der Variable die ASCII Zeichen aufnimmt zum beenden des Programms X 
 	int codePage = 0; // Variable in die der Wert der Pfeiltasten gespeichert wird
 
-	ascii = getch(); // Einlesen ob die Taste X gedrückt wird
+	ascii = getch(); // Einlesen ob die Taste X gedrÃ¼ckt wird
 
-	if (ascii == 88 || ascii == 120) // Überprüfung ob x oder X gedrückt wurde und das Programm beendet werden soll
+	if (ascii == 88 || ascii == 120) // ÃœberprÃ¼fung ob x oder X gedrÃ¼ckt wurde und das Programm beendet werden soll
 	{
 		schleife = 0; // 0 Setzen der Schleifenvariable um das Programm zu beenden 
 	}
 	else
 	{
 		codePage = getch(); // Einlesen der Pfeiltastenwerte
-		switch (codePage) // Switch case zur Überprüfung welche Pfeiltaste gedrückt wurde
+		switch (codePage) // Switch case zur ÃœberprÃ¼fung welche Pfeiltaste gedrÃ¼ckt wurde
 		{
 		case 72: // Pfeiltaste nach oben
 			zeilen--; // Die Zeilen werden um 1 verringert ; das Raumschiff fliegt um eine Zeile nach oben 
 			break;
 		case 80: // Pfeiltaste nach unten
-			zeilen++; // Die Zeilen werden um 1 erhöht ; das Raumschiff fliegt um eine Zeile nach unten
+			zeilen++; // Die Zeilen werden um 1 erhÃ¶ht ; das Raumschiff fliegt um eine Zeile nach unten
 			break;
 		case 75: // Pfeiltaste nach links 
 			posxn--; // Die Leerzeichen vor dem Raumschiff werden um 1 verringert ; das Raumschiff fliegt um ein Zeichen nach links
 			richtung = 1; // Die Richtung des Raumschiffs wird auf 1 = Spitze nach links festgelegt
 			break;
 		case 77: // Pfeiltaste nach rechts
-			posxn++; // Die Leerzeichen vor dem Raumschiff werden um 1 erhöht ; das Raumschiff fliegt um ein Zeichen nach rechts
+			posxn++; // Die Leerzeichen vor dem Raumschiff werden um 1 erhÃ¶ht ; das Raumschiff fliegt um ein Zeichen nach rechts
 			richtung = 2; // Die Richtung des Raumschiffs wird auf 2 = Spitze nach rechts festgelegt
 			break;
 
@@ -102,12 +98,12 @@ void bewegung()
 
 void spielfeld() // Funktion welche das Spielfeld in der X Achse begrenzt 
 {
-	if (posxn < 0) // Überprüfung ob der Nutzer zu weit nach links fliegen möchte
+	if (posxn < 0) // ÃœberprÃ¼fung ob der Nutzer zu weit nach links fliegen mÃ¶chte
 	{
 		posxn++; // Korrektur des Wertes um dieses Verhalten zu verhindern
 	}
 	else
-		if (posxn > 100) // Überprüfung ob der Nutzer zu weit nach rechts fliegen möchte
+		if (posxn > 100) // ÃœberprÃ¼fung ob der Nutzer zu weit nach rechts fliegen mÃ¶chte
 		{
 			posxn--; // Korrektur des Wertes um dieses Verhalten zu verhindern
 		}
