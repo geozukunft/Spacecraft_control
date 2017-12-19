@@ -35,7 +35,7 @@ int main()
 	{
 		bewegung(); // Aufruf der Funktion welche die Variablen zur Bewegung festlegt
 
-		system("cls"); // Löschen des Bildschirms um alte Eingaben bzw alte Frames zu entfernen
+		system("cls"); // Loeschen des Bildschirms um alte Eingaben bzw alte Frames zu entfernen
 
 		if (posxn >= posxa && richtung == 2) // Feststellung der Flugrichtung
 		{
@@ -65,14 +65,14 @@ void bewegung()
 
 	ascii = getch(); // Einlesen ob die Taste X gedrückt wird
 
-	if (ascii == 88 || ascii == 120) // Überprüfung ob x oder X gedrückt wurde und das Programm beendet werden soll
+	if (ascii == 88 || ascii == 120) // Ueberprüfung ob x oder X gedrückt wurde und das Programm beendet werden soll
 	{
 		schleife = 0; // 0 Setzen der Schleifenvariable um das Programm zu beenden 
 	}
 	else
 	{
 		codePage = getch(); // Einlesen der Pfeiltastenwerte
-		switch (codePage) // Switch case zur Überprüfung welche Pfeiltaste gedrückt wurde
+		switch (codePage) // Switch case zur Ueberpruefung welche Pfeiltaste gedrückt wurde
 		{
 		case 72: // Pfeiltaste nach oben
 			zeilen--; // Die Zeilen werden um 1 verringert ; das Raumschiff fliegt um eine Zeile nach oben 
@@ -98,7 +98,7 @@ void bewegung()
 
 void spielfeld() // Funktion welche das Spielfeld in der X Achse begrenzt 
 {
-	if (posxn < 0) // Überprüfung ob der Nutzer zu weit nach links fliegen möchte
+	if (posxn < 0) // Ueberpruefung ob der Nutzer zu weit nach links fliegen möchte
 	{
 		posxn++; // Korrektur des Wertes um dieses Verhalten zu verhindern
 	}
