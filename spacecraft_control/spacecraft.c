@@ -1,4 +1,6 @@
 /*
+Dieses Programm ist mit GNU GPLv3.0 Lizenziert und wurde von Viktor Lennert verfasst
+
 Bitte beachten sie das dieses Programm nur für Windows geschrieben und auf ihre vollständige Funktionalität geprüft wurde!
 Jegliche Informationen in diesem Programm beziehen sich auf eine Windows Umgebung.
 
